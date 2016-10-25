@@ -22,9 +22,8 @@ Template.events.onRendered( () => {
     },
 
     dayClick( date ) {
-      alert('THIS IS WHERE A SESSION WILL BE ADDED');
-      // Session.set( 'eventModal', { type: 'add', date: date.format() } );
-      // $( '#add-edit-event-modal' ).modal( 'show' );
+      FlowRouter.go('Add_Session');
+      Events.insert( { title: 'Event Title', start: '2016-10-03', end: '2016-10-03', editable: true, type: 'Corporate', guests: 50 } );
     },
 
     eventClick( event ) {

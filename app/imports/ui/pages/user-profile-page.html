@@ -2,420 +2,83 @@
   <div class="ui left aligned grid text container">
 
     <div class="four wide column">
-      <img class="ui small circular image" src="/images/mascot.png"/>
+      <img class="ui small circular image" src="/images/profilepic.jpg"/>
+      <div class="ui segments">
+        <div class="ui segment">
+          <p class="item">About</p>
+        </div>
+        <div class="ui segment">
+          <p class="item">Rating</p>
+        </div>
+        <div class="ui segment">
+          <p class="item">Edit</p>
+        </div>
+      </div>
     </div>
 
     <div class="twelve wide column">
       <h1>Hiya!</h1>
       <p>This is your profile! Here you may edit the courses you have taken and for which you are willing to provide
         help for! You may also select which classes you are currently taking and for which you may need help!</p>
+      <h1>Sensei (Provide Help)</h1>
+
+      {{#if Template.subscriptionsReady}}
+        <table style="margin-top: 20px" class="ui celled table">
+          <thead>
+          <tr>
+            <th>Class</th>
+          </tr>
+          </thead>
+
+          <tbody>
+          <tr>
+            <td>ICS 311</td>
+          </tr>
+          {{#each contact in ContactsList}}
+            <tr>
+              <td>{{sensei.class}}</td>
+              <td><a href="{{pathFor 'Edit_Sensei' _id=contact._id}}">Edit</a></td>
+            </tr>
+          {{/each}}
+          </tbody>
+        </table>
+      {{else}}
+        {{> Loading}}
+      {{/if}}
+
+      <div class="ui button">Add</div>
+
+      <h1>Grasshopper (Receive Help)</h1>
+
+      {{#if Template.subscriptionsReady}}
+        <table style="margin-top: 20px" class="ui celled table">
+          <thead>
+          <tr>
+            <th>Class</th>
+          </tr>
+          </thead>
+
+          <tbody>
+          <tr>
+            <td>
+              ICS 111
+            </td>
+          </tr>
+          {{#each contact in ContactsList}}
+            <tr>
+              <td>{{grasshopper.class}}</td>
+              <td><a href="{{pathFor 'Edit_Grasshopper' _id=contact._id}}">Edit</a></td>
+            </tr>
+          {{/each}}
+          </tbody>
+        </table>
+      {{else}}
+        {{> Loading}}
+      {{/if}}
+
+      <div class="ui button">Add</div>
+
     </div>
 
   </div>
-
-  <div style="padding-top: 20px" class="ui container">
-    <div class="ui celled relaxed list">
-      <div class="item">
-        <div class="ui master checkbox">
-          <input type="checkbox" name="Provide Help">
-          <label>Provide Help</label>
-        </div>
-        <div class="list">
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 101">
-              <label>ICS 101</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 110">
-              <label>ICS 110</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 111">
-              <label>ICS 111</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 141">
-              <label>ICS 141</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 210">
-              <label>ICS 210</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 211">
-              <label>ICS 211</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 212">
-              <label>ICS 212</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 215">
-              <label>ICS 215</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 222">
-              <label>ICS 222</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 241">
-              <label>ICS 241</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 290">
-              <label>ICS 290</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 311">
-              <label>ICS 311</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 312">
-              <label>ICS 312</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 313">
-              <label>ICS 313</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 314">
-              <label>ICS 314</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 321">
-              <label>ICS 321</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 331">
-              <label>ICS 331</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 332">
-              <label>ICS 332</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 351">
-              <label>ICS 351</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 355">
-              <label>ICS 355</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 361">
-              <label>ICS 361</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 390">
-              <label>ICS 390</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 414">
-              <label>ICS 414</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 415">
-              <label>ICS 415</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 419">
-              <label>ICS 419</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 421">
-              <label>ICS 421</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 422">
-              <label>ICS 422</label>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="ui master checkbox">
-          <input type="checkbox" name="Receive Help">
-          <label>Receive Help</label>
-        </div>
-        <div class="list">
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 101">
-              <label>ICS 101</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 110">
-              <label>ICS 110</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 111">
-              <label>ICS 111</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 141">
-              <label>ICS 141</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 210">
-              <label>ICS 210</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 211">
-              <label>ICS 211</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 212">
-              <label>ICS 212</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 215">
-              <label>ICS 215</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 222">
-              <label>ICS 222</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 241">
-              <label>ICS 241</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 290">
-              <label>ICS 290</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 311">
-              <label>ICS 311</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 312">
-              <label>ICS 312</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 313">
-              <label>ICS 313</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 314">
-              <label>ICS 314</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 321">
-              <label>ICS 321</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 331">
-              <label>ICS 331</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 332">
-              <label>ICS 332</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 351">
-              <label>ICS 351</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 355">
-              <label>ICS 355</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 361">
-              <label>ICS 361</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 390">
-              <label>ICS 390</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 414">
-              <label>ICS 414</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 415">
-              <label>ICS 415</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 419">
-              <label>ICS 419</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 421">
-              <label>ICS 421</label>
-            </div>
-          </div>
-          <div class="item">
-            <div class="ui child checkbox">
-              <input type="checkbox" name="ICS 422">
-              <label>ICS 422</label>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <script>
-    $('.list .master.checkbox')
-        .checkbox({
-          // check all children
-          onChecked: function () {
-            var
-                $childCheckbox = $(this).closest('.checkbox').siblings('.list').find('.checkbox')
-                ;
-            $childCheckbox.checkbox('check');
-          },
-          // uncheck all children
-          onUnchecked: function () {
-            var
-                $childCheckbox = $(this).closest('.checkbox').siblings('.list').find('.checkbox')
-                ;
-            $childCheckbox.checkbox('uncheck');
-          }
-        })
-    ;
-  </script>
-
-  <script>
-    $('.list .child.checkbox')
-        .checkbox({
-          // Fire on load to set parent value
-          fireOnInit: true,
-          // Change parent state on each child checkbox change
-          onChange: function () {
-            var
-                $listGroup = $(this).closest('.list'),
-                $parentCheckbox = $listGroup.closest('.item').children('.checkbox'),
-                $checkbox = $listGroup.find('.checkbox'),
-                allChecked = true,
-                allUnchecked = true
-                ;
-            // check to see if all other siblings are checked or unchecked
-            $checkbox.each(function () {
-              if ($(this).checkbox('is checked')) {
-                allUnchecked = false;
-              }
-              else {
-                allChecked = false;
-              }
-            });
-            // set parent checkbox state, but dont trigger its onChange callback
-            if (allChecked) {
-              $parentCheckbox.checkbox('set checked');
-            }
-            else
-              if (allUnchecked) {
-                $parentCheckbox.checkbox('set unchecked');
-              }
-              else {
-                $parentCheckbox.checkbox('set indeterminate');
-              }
-          }
-        })
-    ;
-  </script>
 </template>

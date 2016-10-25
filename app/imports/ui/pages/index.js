@@ -13,5 +13,5 @@ import './agreement-page.js';
 import './events.html';
 import './events.js';
 
-import './game-page.html';
-import './game-page.js';
+import './add-session.html';
+import './add-session.js';

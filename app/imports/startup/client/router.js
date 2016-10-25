@@ -36,10 +36,10 @@ FlowRouter.route('/calendar', {
   },
 });
 
-FlowRouter.route('/progress', {
-  name: 'Game_Page',
+FlowRouter.route('/Add_Session', {
+  name: 'Add_Session',
   action() {
-    BlazeLayout.render('App_Body', { main: 'Game_Page' });
+    BlazeLayout.render('App_Body', { main: 'Add_Session' });
   },
 });
 
