@@ -3,7 +3,7 @@ import { Template } from 'meteor/templating';
 
 /* eslint-disable object-shorthand */
 
-Template.Header.helpers({
+Template.Public_Landing_Page.helpers({
   /**
    * @returns {String} Returns the user who's logged in
    */
@@ -11,4 +11,3 @@ Template.Header.helpers({
     return Meteor.user() ? Meteor.user().profile.name : 'No logged in user';
   },
 });
-

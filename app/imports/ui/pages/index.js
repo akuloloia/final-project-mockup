@@ -1,10 +1,17 @@
-import './add-stuff-page.html';
-import './add-stuff-page.js';
+import './public-landing-page.html';
+import './public-landing-page.js';
 
-import './edit-stuff-page.html';
-import './edit-stuff-page.js';
+import './user-home-page.html';
+import './user-home-page.js';
 
-import './home-page.html';
+import './user-profile-page.html';
+import './user-profile-page.js';
 
-import './list-stuff-page.html';
-import './list-stuff-page.js';
+import './agreement-page.html';
+import './agreement-page.js';
+
+import './events.html';
+import './events.js';
+
+import './game-page.html';
+import './game-page.js';

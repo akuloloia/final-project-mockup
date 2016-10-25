@@ -1,0 +1,29 @@
+<template name="User_Home_Page">
+  <div class="ui left aligned centered grid text container">
+
+    <div class="four wide column">
+      <img class="ui small circular image" src="/images/mascot.png"/>
+    </div>
+
+    <div class="eight wide column">
+      <h1>Welcome!</h1>
+      <p>My name is Squirt and I'll be your assistant! This is your home page! From here, you can edit your profile,
+        create new study sessions and even check the calendar for any existing ones.  Below, you'll find the
+        amount of progress you have accumulated throughout your time here!</p>
+      <p>When you're ready to explore, feel free to click any of the links up top!</p>
+      <h3 style="padding-top: 10px">Progress</h3>
+      <div class="ui blue progress" id="progressBar">
+        <div class="bar">
+          <div class="progress"></div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <script>
+    $('#progressBar').progress({
+      percent: 0
+    });
+  </script>
+</template>
