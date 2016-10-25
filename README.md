@@ -1,6 +1,8 @@
 # final-project-mockup
 
-<img class="ui medium right floated rounded image" src="final-project-mockup/doc/AgreementPage.png">
+final-project-mockup/doc/AgreementPage.png
+
+<img class="ui medium right floated rounded image" src="doc/AgreementPage.png">
 
 <img class="ui medium right floated rounded image" src="../doc/Calendar Page.png">
 
