@@ -1,5 +1,3 @@
-# final-project-mockup
-
 # Public Landing Page
 <img class="ui medium right floated rounded image" src="doc/public landing page.png">
 
