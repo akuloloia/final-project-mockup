@@ -15,6 +15,9 @@
 
 # Create Session Page
 <img class="ui medium right floated rounded image" src="doc/CreateSession.png">
+<<<<<<< HEAD
 
 # Calendar After Session is Created
 <img class="ui medium right floated rounded image" src="doc/CalendarAfter.png">
+=======
+>>>>>>> origin/master
