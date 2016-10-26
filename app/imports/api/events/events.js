@@ -1,17 +1,5 @@
 Events = new Mongo.Collection( 'events' );
 
-Events.allow({
-  insert: () => false,
-  update: () => false,
-  remove: () => false
-});
-
-Events.deny({
-  insert: () => true,
-  update: () => true,
-  remove: () => true
-});
-
 let EventsSchema = new SimpleSchema({
   'title': {
     type: String,
@@ -25,14 +13,6 @@ let EventsSchema = new SimpleSchema({
     type: String,
     label: 'When this event will end.'
   },
-  'type': {
-    type: String,
-    label: 'What type of event is this?',
-  },
-  'guests': {
-    type: Number,
-    label: 'The number of guests expected at this event.'
-  }
 });
 
 Events.attachSchema( EventsSchema );

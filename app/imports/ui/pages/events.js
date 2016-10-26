@@ -22,8 +22,9 @@ Template.events.onRendered( () => {
     },
 
     dayClick( date ) {
+      Events.insert( { title: 'Event Title', start: '2016-10-04', end: '2016-10-04', editable: true, type: 'Corporate', guests: 50 } );
       FlowRouter.go('Add_Session');
-      Events.insert( { title: 'Event Title', start: '2016-10-03', end: '2016-10-03', editable: true, type: 'Corporate', guests: 50 } );
+      Session.set( 'eventModal', { type: 'add', date: date.format() } );
     },
 
     eventClick( event ) {

@@ -39,14 +39,12 @@ Template.Add_Session.events({
   'submit form' ( event, template ) {
     event.preventDefault();
 
-    let eventModal = 'Add',
-        submitType = 'addEvent',
+    let eventModal = Session.get( 'eventModal' ),
+        submitType = eventModal.type === 'edit' ? 'editEvent' : 'addEvent',
         eventItem  = {
           title: template.find( '[name="title"]' ).value,
-          start: "2016-10-03",
-          end: "2016-10-03",
-          type: template.find( '[name="type"] option:selected' ).value,
-          guests: parseInt( template.find( '[name="guests"]' ).value, 10 )
+          start: template.find( '[name="start"]' ).value,
+          end: template.find( '[name="end"]' ).value,
         };
 
     if ( submitType === 'editEvent' ) {
@@ -61,7 +59,7 @@ Template.Add_Session.events({
         closeModal();
       }
     });
-
+    Events.insert(eventItem);
     FlowRouter.go("events");
   }
 });
