@@ -15,9 +15,12 @@
 
 # Create Session Page
 <img class="ui medium right floated rounded image" src="doc/CreateSession.png">
-<<<<<<< HEAD
 
 # Calendar After Session is Created
 <img class="ui medium right floated rounded image" src="doc/CalendarAfter.png">
-=======
->>>>>>> origin/master
+
+# Delete Event
+<img class="ui medium right floated rounded image" src="doc/DeleteEvent.png">
+
+# Calendar After Session is Deleted
+<img class="ui medium right floated rounded image" src="doc/CalendarAfterDelete.png">

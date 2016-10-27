@@ -22,15 +22,22 @@ Template.events.onRendered( () => {
     },
 
     dayClick( date ) {
-      Events.insert( { title: 'Event Title', start: '2016-10-04', end: '2016-10-04', editable: true, type: 'Corporate', guests: 50 } );
       FlowRouter.go('Add_Session');
       Session.set( 'eventModal', { type: 'add', date: date.format() } );
     },
 
     eventClick( event ) {
-      alert('YOU EVENT CLICKER!');
-      // Session.set( 'eventModal', { type: 'edit', event: event._id } );
-      // $( '#add-edit-event-modal' ).modal( 'show' );
+      Session.set( 'eventModal', { type: 'edit', event: event._id } );
+      new Confirmation({
+        message: "Are you sure you want to delete this event?",
+        title: "Confirmation",
+        cancelText: "Cancel",
+        okText: "Ok",
+        success: true, // whether the button should be green or red
+        focus: "cancel" // which button to autofocus, "cancel" (default) or "ok", or "none"
+      }, function (ok) {
+        Events.remove(event._id);
+      });
     },
 
   });

@@ -47,19 +47,14 @@ Template.Add_Session.events({
           end: template.find( '[name="end"]' ).value,
         };
 
-    if ( submitType === 'editEvent' ) {
-      eventItem._id   = eventModal.event;
-    }
-
-    Meteor.call( submitType, eventItem, ( error ) => {
-      if ( error ) {
-        Bert.alert( error.reason, 'danger' );
-      } else {
-        Bert.alert( `Event ${ eventModal.type }ed!`, 'success' );
-        closeModal();
-      }
-    });
     Events.insert(eventItem);
     FlowRouter.go("events");
+  }
+});
+
+Template.Add_Session.events({
+  'click .btn-default' (event){
+    event.preventDefault();
+    FlowRouter.go('events');
   }
 });
